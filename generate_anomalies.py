@@ -1,6 +1,7 @@
 import argparse
 
 import pandas as pd
+import xarray as xr
 import matplotlib.pyplot as plt
 
 from generation_pipeline import create_power_anomaly_pipeline, create_energy_anomaly_pipeline
@@ -27,7 +28,7 @@ def parse_hparams(args=None):
     # energy type
     parser.add_argument('type', type=str, help='Type of the time series ("power" or "energy").')
     # time_index
-    parser.add_argument('--time', type=str, default='utc_timestamp', help='Name of the time index.')
+    parser.add_argument('--time', type=str, default='Unnamed: 0', help='Name of the time index.')
 
     # anomaly params: Type 1
     parser.add_argument('--type1', type=str2intorfloat,  default=3,
@@ -74,10 +75,10 @@ def parse_hparams(args=None):
                         help='Seed to be used in the pipeline run.')
 
     # delimiter
-    parser.add_argument('--csv_separator', type=str, default=',',
+    parser.add_argument('--csv_separator', type=str, default=';',
                         help='CSV file column separator (default ,).')
     # decimal
-    parser.add_argument('--csv_decimal', type=str, default='.',
+    parser.add_argument('--csv_decimal', type=str, default=',',
                         help='CSV file decimal delimiter (default .).')
 
     # convert argument strings
@@ -116,7 +117,7 @@ def run_pipeline(hparams):
     print(dataset)
     pipeline = create_pipeline(hparams)
     result, _ = pipeline.train(dataset)
-    result = pd.DataFrame(result)
+    result = xr.Dataset(result).to_pandas()
     return result
 
 

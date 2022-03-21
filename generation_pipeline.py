@@ -31,8 +31,8 @@ def create_power_anomaly_pipeline(hparams):
         'y_hat', anomaly='type2', count=hparams.type2, label=2, seed=seed + 2,
         length_params={
             'distribution': 'uniform',
-            'min': max(hparams.type2_len_min, 2), #if  hparams.type2_len_min < 48 - 4 else 48 - 4,
-            'max': min(48, hparams.type2_len_max),#max(hparams.type2_len_max // 2, 2)# min(48, hparams.type2_len_max),
+            'min': max(hparams.type2_len_min, 2),
+            'max': min(48, hparams.type2_len_max),
         },
         anomaly_params={
             'softstart': hparams.type2_softstart
