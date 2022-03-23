@@ -46,7 +46,6 @@ def create_power_anomaly_pipeline(hparams):
             'y_hat', anomaly='type3', count=hparams.type3, label=32, seed=seed + 4,
             anomaly_params={
                 'is_extreme': True,
-                'range_r': (0.01, 3.99),
                 'k': hparams.k
             }
         )(x=anomaly_type2['y_hat'], labels=anomaly_type2['labels'])
