@@ -8,7 +8,7 @@ from pywatts.modules.generation import PowerAnomalyGeneration, EnergyAnomalyGene
 
 def create_power_anomaly_pipeline(hparams):
     """
-    Generate anomalies of types (1) to (4) for a given power time series
+    Generate anomalies of types 1 to 4 for a given power time series
     """
     pipeline = Pipeline(path=os.path.join('run'))
     seed = hparams.seed
@@ -76,7 +76,7 @@ def create_power_anomaly_pipeline(hparams):
 
 def create_energy_anomaly_pipeline(hparams):
     """
-    Generate anomalies of types (1) to (4) for a given energy time series
+    Generate anomalies of types 1 to 4 for a given energy time series
     """
     pipeline = Pipeline(path=os.path.join('run'))
     seed = hparams.seed

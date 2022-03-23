@@ -26,49 +26,49 @@ def parse_hparams(args=None):
     # data_index
     parser.add_argument('column', type=str, help='Name of the target column.')
     # energy type
-    parser.add_argument('type', type=str, help='Type of the time series ("power" or "energy").')
+    parser.add_argument('type', type=str, help='Type of the time series ("energy" or "power").')
     # time_index
-    parser.add_argument('--time', type=str, default='Unnamed: 0', help='Name of the time index.')
+    parser.add_argument('--time', type=str, default='Unnamed: 0', help='Name of the time index (if it is not unnamed).')
 
     # anomaly params: Type 1
-    parser.add_argument('--type1', type=str2intorfloat,  default=3,
+    parser.add_argument('--type1', type=str2intorfloat,  default=18,
                         help='Percentage or absolute number of type 1 anomalies.')
-    parser.add_argument('--type1_len_min', type=int, default=6,
+    parser.add_argument('--type1_len_min', type=int, default=3,
                         help='Minimum length of type 1 anomalies')
-    parser.add_argument('--type1_len_max', type=int, default=10,
+    parser.add_argument('--type1_len_max', type=int, default=4465,
                         help='Maximum length of type 1 anomalies')
 
     # anomaly params: Type 2
-    parser.add_argument('--type2', type=str2intorfloat, default=3,
+    parser.add_argument('--type2', type=str2intorfloat, default=15,
                         help='Percentage or absolute number of type 2 anomalies.')
-    parser.add_argument('--type2_len_min', type=int, default=6,
+    parser.add_argument('--type2_len_min', type=int, default=1731,
                         help='Minimum length of type 2 anomalies')
-    parser.add_argument('--type2_len_max', type=int, default=10,
+    parser.add_argument('--type2_len_max', type=int, default=7434,
                         help='Maximum length of type 2 anomalies')
     parser.add_argument('--type2_softstart', action='store_true',
                         help='If softstart should be used for type 2 anomalies.')
 
     # anomaly params: Type 3
-    parser.add_argument('--type3', type=str2intorfloat, default=4,
+    parser.add_argument('--type3', type=str2intorfloat, default=2,
                         help='Percentage or absolute number of type 3 anomalies.')
-    parser.add_argument('--type3_r_min', type=int, default=0.01,
+    parser.add_argument('--type3_r_min', type=int, default=0.61,
                         help='Minimum r of type 3 anomalies (slight case)')
-    parser.add_argument('--type3_r_max', type=int, default=3.99,
+    parser.add_argument('--type3_r_max', type=int, default=1.62,
                         help='Maximum r of type 3 anomalies (slight case)')
     parser.add_argument('--type3_extreme', action='store_true',
                         help='Enable type 3 extreme anomaly case.')
 
     # anomaly params: Type 4
-    parser.add_argument('--type4', type=str2intorfloat, nargs='?', const=True, default=10,
+    parser.add_argument('--type4', type=str2intorfloat, default=4,
                         help='Percentage or absolute number of type 4 anomalies.')
-    parser.add_argument('--type4_r_min', type=int, default=2,
+    parser.add_argument('--type4_r_min', type=int, default=1.15,
                         help='Minimum r of type 4 anomalies (either slight or extreme case)')
-    parser.add_argument('--type4_r_max', type=int, default=5,
+    parser.add_argument('--type4_r_max', type=int, default=8.1,
                         help='Maximum r of type 4 anomalies (either slight or extreme case)')
 
-    # anomaly params: All types
-    parser.add_argument('--k', type=int, default=0,
-                        help='Energy offset of type 3 anomalies.')
+    # anomaly params: Types 1 and 3
+    parser.add_argument('--k', type=int, default=17,
+                        help='Energy offset of type 1 and 3 anomalies.')
 
     # Set random seed
     parser.add_argument('--seed', type=int, default=42,
