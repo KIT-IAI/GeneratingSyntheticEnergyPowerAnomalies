@@ -18,8 +18,8 @@ def create_power_anomaly_pipeline(hparams):
         'y_hat', anomaly='type1', count=hparams.type1, label=1, seed=seed + 1,
         length_params={
             'distribution': 'uniform',
-            'min': max(hparams.type1_len_min, 3) if hparams.type1_len_min < 96 - 4 else 96 - 4,
-            'max': min(96, hparams.type1_len_max)
+            'min': hparams.type1_len_min,
+            'max': hparams.type1_len_max
         },
         anomaly_params={
             'k': hparams.k
@@ -31,8 +31,8 @@ def create_power_anomaly_pipeline(hparams):
         'y_hat', anomaly='type2', count=hparams.type2, label=2, seed=seed + 2,
         length_params={
             'distribution': 'uniform',
-            'min': max(hparams.type2_len_min, 2),
-            'max': min(48, hparams.type2_len_max),
+            'min': hparams.type2_len_min,
+            'max': hparams.type2_len_max,
         },
         anomaly_params={
             'softstart': hparams.type2_softstart
@@ -103,8 +103,8 @@ def create_energy_anomaly_pipeline(hparams):
         'y_hat', anomaly='type1', count=hparams.type1, label=1, seed=seed + 4,
         length_params={
             'distribution': 'uniform',
-            'min': max(hparams.type1_len_min, 3) if hparams.type1_len_min < 96 - 4 else 96 - 4,
-            'max': min(96, hparams.type1_len_max)
+            'min': hparams.type1_len_min,
+            'max': hparams.type1_len_max
         }
     )(x=anomaly_type4['y_hat'], labels=anomaly_type4['labels'])
 
@@ -113,8 +113,8 @@ def create_energy_anomaly_pipeline(hparams):
         'y_hat', anomaly='type2', count=hparams.type2, label=2, seed=seed + 5,
         length_params={
             'distribution': 'uniform',
-            'min': max(hparams.type2_len_min, 2),
-            'max': min(48, hparams.type2_len_max),
+            'min': hparams.type2_len_min,
+            'max': hparams.type2_len_max,
         },
         anomaly_params={
             'softstart': hparams.type2_softstart

@@ -23,7 +23,7 @@ Finally, you can generate synthetic anomalies for power or energy time series.
 ### Input
 
 To generate synthetic anomalies, run the generation with `python generate_anomalies.py name_csv_file selected_column energy_or_power` to use some default parameters from Table 3 in the paper.
-With the data described above, an exemplary generation command for the column "MT_321" could be `python generate_anomalies.py LD2011_2014.txt "MT_321" "power"
+With the data described above, an exemplary generation command for the column "MT_321" could be `python generate_anomalies.py LD2011_2014.txt MT_321 power
 `.
 
 You can see a list of all parameters available for the generation by calling `python generate_anomalies.py --help`. 

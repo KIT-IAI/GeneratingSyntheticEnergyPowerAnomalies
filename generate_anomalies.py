@@ -51,9 +51,9 @@ def parse_hparams(args=None):
     # anomaly params: Type 3
     parser.add_argument('--type3', type=str2intorfloat, default=2,
                         help='Percentage or absolute number of type 3 anomalies.')
-    parser.add_argument('--type3_r_min', type=int, default=0.61,
+    parser.add_argument('--type3_r_min', type=float, default=0.61,
                         help='Minimum r of type 3 anomalies (slight case)')
-    parser.add_argument('--type3_r_max', type=int, default=1.62,
+    parser.add_argument('--type3_r_max', type=float, default=1.62,
                         help='Maximum r of type 3 anomalies (slight case)')
     parser.add_argument('--type3_extreme', action='store_true',
                         help='Enable type 3 extreme anomaly case.')
@@ -61,9 +61,9 @@ def parse_hparams(args=None):
     # anomaly params: Type 4
     parser.add_argument('--type4', type=str2intorfloat, default=4,
                         help='Percentage or absolute number of type 4 anomalies.')
-    parser.add_argument('--type4_r_min', type=int, default=1.15,
+    parser.add_argument('--type4_r_min', type=float, default=1.15,
                         help='Minimum r of type 4 anomalies (either slight or extreme case)')
-    parser.add_argument('--type4_r_max', type=int, default=8.1,
+    parser.add_argument('--type4_r_max', type=float, default=8.1,
                         help='Maximum r of type 4 anomalies (either slight or extreme case)')
 
     # anomaly params: Types 1 and 3
