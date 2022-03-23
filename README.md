@@ -18,7 +18,11 @@ If you do not have any power or energy time series available, you can download e
 
 ## Generate Synthetic Anomalies
 
-Finally, you can generate synthetic anomalies for power or energy time series by running the generation with `python generate_anomalies.py name_csv_file selected_column energy_or_power` with the default parameters described in Table 3 in the paper.
+Finally, you can generate synthetic anomalies for power or energy time series.
+
+### Input
+
+To generate synthetic anomalies, run the generation with `python generate_anomalies.py name_csv_file selected_column energy_or_power` to use some default parameters from Table 3 in the paper.
 With the data described above, an exemplary generation command for the column "MT_321" could be `python generate_anomalies.py LD2011_2014.txt "MT_321" "power"
 `.
 
@@ -87,7 +91,13 @@ type
    CSV file decimal delimiter (default .).
 ```
 
+### Output
 
+After running the command, the pipeline returns an "energy.csv" or "power.csv" file containing the following four columns:
+* index: time information
+* y: values of the original time series
+* anomalies: labels (0 for unchanged original values and the labels 1, 2, 31, 32, 4 for inserted anomalies of the different types)
+* y_hat: values of the time series containing synthetic anomalies
 ## Funding
 
 This project is supported by the Helmholtz Association’s Initiative and Networking Fund through Helmholtz AI, by the Helmholtz Association under the Program “Energy System Design”, and by the German Research Foundation (DFG) Research Training Group 2153 "Energy Status Data: Informatics Methods for its Collection, Analysis and Exploitation".
