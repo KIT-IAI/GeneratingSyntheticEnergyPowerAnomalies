@@ -1,8 +1,8 @@
 # Generating Synthetic Anomalies for Energy and Power Time Series
 
-This repository contains the Python implementation of the method to generate synthetic anomalies for energy and power time series as presented in the following paper:
->M. Turowski, M. Weber, O. Neumann, B. Heidrich, K. Phipps, H. K. Çakmak, R. Mikut and V. Hagenmeyer, 2022, "Modeling and Generating Synthetic Anomalies for Energy and
-Power Time Series," in The Thirteenth ACM International Conference on Future Energy Systems (e-Energy 2022) (under review).
+This repository contains the Python implementation of the method to generate synthetic anomalies for arbitrary energy and power time series as presented in the following paper:
+>M. Turowski, M. Weber, O. Neumann, B. Heidrich, K. Phipps, H. K. Çakmak, R. Mikut and V. Hagenmeyer, 2022, "Modeling and Generating Synthetic Anomalies for Energy and Power Time Series," in The Thirteenth ACM International Conference on Future Energy Systems (e-Energy 2022) (accepted).
+
 
 ## Installation
 
@@ -98,6 +98,8 @@ After running the command, the pipeline returns an "energy.csv" or "power.csv" f
 * y: values of the original time series
 * anomalies: labels (0 for unchanged original values and the labels 1, 2, 31, 32, 4 for inserted anomalies of the different types)
 * y_hat: values of the time series containing synthetic anomalies
+
+
 ## Funding
 
 This project is supported by the Helmholtz Association’s Initiative and Networking Fund through Helmholtz AI, by the Helmholtz Association under the Program “Energy System Design”, and by the German Research Foundation (DFG) Research Training Group 2153 "Energy Status Data: Informatics Methods for its Collection, Analysis and Exploitation".
