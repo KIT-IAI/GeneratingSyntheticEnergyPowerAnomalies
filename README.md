@@ -100,6 +100,12 @@ After running the command, the pipeline returns an "energy.csv" or "power.csv" f
 * y_hat: values of the time series containing synthetic anomalies
 
 
+## Evaluation
+For the evaluation, there exist three pipelines in the evaluation folder, that evaluate the predictive score, the discriminative score and the diversity of the generated data.
+
+### Input
+A path to a csv data containing the real time series with labelled anomalies and the time series with synthetic data and the corresponding labels.
+
 ## Funding
 
 This project is supported by the Helmholtz Association’s Initiative and Networking Fund through Helmholtz AI, by the Helmholtz Association under the Program “Energy System Design”, and by the German Research Foundation (DFG) Research Training Group 2153 "Energy Status Data: Informatics Methods for its Collection, Analysis and Exploitation".
