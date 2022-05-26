@@ -16,6 +16,7 @@ Set up a virtual environment using e.g. venv (`python -m venv venv`) or Anaconda
 
 If you do not have any power or energy time series available, you can download exemplary data by executing `python download.py`. This script downloads and unpacks the [ElectricityLoadDiagrams20112014 Data Set](https://archive.ics.uci.edu/ml/datasets/ElectricityLoadDiagrams20112014) from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/) as CSV file, which can be used as power time series.
 
+
 ## Generate Synthetic Anomalies
 
 Finally, you can generate synthetic anomalies for power or energy time series.
@@ -101,10 +102,11 @@ After running the command, the pipeline returns an "energy.csv" or "power.csv" f
 
 
 ## Evaluation
-For the evaluation, there exist three pipelines in the evaluation folder, that evaluate the predictive score, the discriminative score and the diversity of the generated data.
+For the evaluation, there are three pipelines in the evaluation folder. These pipelines calculate the predictive score, the discriminative score, and the diversity of the generated anomalies.
 
 ### Input
-A path to a csv data containing the real time series with labelled anomalies and the time series with synthetic data and the corresponding labels.
+A path to a csv file containing the real time series with labeled anomalies and the time series with synthetic anomalies and the corresponding labels.
+
 
 ## Funding
 
