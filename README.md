@@ -1,7 +1,7 @@
 # Generating Synthetic Anomalies for Energy and Power Time Series
 
-This repository contains the Python implementation of the method to generate synthetic anomalies for arbitrary energy and power time series as presented in the following paper:
->M. Turowski, M. Weber, O. Neumann, B. Heidrich, K. Phipps, H. K. Çakmak, R. Mikut and V. Hagenmeyer, 2022, "Modeling and Generating Synthetic Anomalies for Energy and Power Time Series," in The Thirteenth ACM International Conference on Future Energy Systems (e-Energy 2022) (accepted).
+This repository contains the Python implementation of the method to generate synthetic anomalies for an arbitrary energy or power time series as presented in the following paper:
+>M. Turowski, M. Weber, O. Neumann, B. Heidrich, K. Phipps, H. K. Çakmak, R. Mikut and V. Hagenmeyer, 2022, "Modeling and Generating Synthetic Anomalies for Energy and Power Time Series," in The Thirteenth ACM International Conference on Future Energy Systems (e-Energy ’22). ACM, pp. 471–484. doi: [10.1145/3538637.3539760](https://dl.acm.org/doi/10.1145/3538637.3539760)
 
 
 ## Installation
