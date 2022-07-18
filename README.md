@@ -105,7 +105,17 @@ After running the command, the pipeline returns an "energy.csv" or "power.csv" f
 For the evaluation, there are three pipelines in the evaluation folder. These pipelines calculate the predictive score, the discriminative score, and the diversity of the generated anomalies.
 
 ### Input
-A path to a csv file containing the real time series with labeled anomalies and the time series with synthetic anomalies and the corresponding labels.
+To use these pipelines, a path to a csv file is necessary that contains the real time series with labeled anomalies and the time series with synthetic anomalies and the corresponding labels.
+More precisely, the test data must have the following columns:
+
+| Column name | Description                                                                                                                                                                                            |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| time        | Date and time of each measurement (used as index)                                                                                                                                                      |
+| kW          | Measured power values (in kW) containing anomalies                                                                                                                                                     |
+| cleaned kW  | Measured power values (in kW) where contained anomalies have been removed and replaced with realistic values (e.g., using the [Copy Paste Imputation](https://github.com/KIT-IAI/CopyPasteImputation)) |
+| label       | Labels for labeled real-world anomalies: 0 = no anomaly; 1 = anomaly of type 1; 2 = anomaly of type 2; etc.                                                                                            |
+| y_hat       | Measured power values (in kW) with inserted synthetic anomalies                                                                                                                                        |
+| anomalies   | Labels for inserted synthetic anomalies: 0 = no anomaly; 1 = anomaly of type 1; 2 = anomaly of type 2; etc. (also see column 'label')                                                                  |
 
 
 ## Funding
